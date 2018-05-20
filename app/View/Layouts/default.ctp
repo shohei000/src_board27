@@ -6,7 +6,8 @@
 	27歳の掲示板 | 
 		<?php
 			if(isset($post)){
-				echo h($post['Post']['title']);
+				$threadTitle = h($post['Post']['title']);
+				echo $threadTitle;
 			} else { 
 				echo $title_for_layout;
 			}
@@ -14,7 +15,7 @@
 	</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 	<meta name="keywords" content="27歳の掲示板,board27">
-	<meta name="description" content="27歳の人たちが集まり情報共有などをする場所です。">
+	<meta name="description" content="<?php echo $threadTitle; ?>">
 	<link rel="shortcut icon" type="image/png" href="http://board27.xyz/favicon.ico" />
 	<?php
 		echo $this->Html->css('style');
@@ -26,15 +27,15 @@
 
 
 
-	<meta property="og:title" content="27歳の掲示板" />
+	<meta property="og:title" content="<?php echo $threadTitle; ?>" />
 	<meta property="og:type" content="article" />
 	<meta property="og:url" content="http://board27.xyz/" />
 	<meta property="og:image" content="http://board27.xyz/ogimage.png" />
-	<meta property="og:site_name"  content="sickhat(しっくはっと)" />
-	<meta property="og:description" content="27歳の人たちが集まり情報共有などをする場所です。" />
+	<meta property="og:site_name"  content="27歳の掲示板" />
+	<meta property="og:description" content="<?php echo $threadTitle; ?>" />
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="27歳の掲示板">
-	<meta name="twitter:description" content="27歳の人たちが集まり情報共有などをする場所です。">
+	<meta name="twitter:title" content="<?php echo $threadTitle; ?>">
+	<meta name="twitter:description" content="<?php echo $threadTitle; ?>">
 	<meta name="twitter:image" content="http://board27.xyz/ogimage.png">
 
 </head>
@@ -90,12 +91,10 @@
 				<i class="fa fa-files-o" aria-hidden="true"></i>
 				<span class="menuTitle">URLをコピー</span>
 			</a>
-			<?php if(isset($com_input)) : ?>
-			<a href="javascript:void(0)" class="menuListCom">
-				<i class="fa fa-commenting" aria-hidden="true"></i>
-				<span class="menuTitle">コメントする</span>
+			<a href="https://twitter.com/share?url=http://board27.xyz/posts/view/<?php echo $post['Post']['id']; ?>&text=<?php echo $threadTitle; ?>" class="twitter-share-button">
+				<i class="fa fa-files-o" aria-hidden="true"></i>
+				<span class="menuTitle">シェアする(TW)</span>
 			</a>
-			<?php endif; ?>
 		</div>
 		<div class="copyFlg"></div>
 	</section>
