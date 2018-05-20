@@ -161,6 +161,7 @@ input,textarea{
 .talkArea{
   position: relative;
   margin: 0 10px;
+  -webkit-overflow-scrolling: touch;
 }
 .talkBox{
   margin-bottom: 25px;
@@ -178,7 +179,7 @@ input,textarea{
   float: left;
   top: 15px;
   font-size: 14px;
-  margin-right: 20%;
+  margin-right: 5px;
 }
 .talkBoxText:before,
 .talkBoxText:after{
@@ -193,7 +194,7 @@ input,textarea{
   top: 10px;
   left: -20px;
 }
-.talkBoxText:after{
+/*.talkBoxText:after{
   content: "";
   display: inline-block;
   position: absolute;
@@ -204,7 +205,7 @@ input,textarea{
   -ms-transform: rotate(35deg);
   -webkit-transform: rotate(35deg);
   transform: rotate(35deg);
-}
+}*/
 .userIcon{
   width: 25px;
   display: inline-block;

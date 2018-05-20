@@ -13,7 +13,7 @@
 		<?php foreach($post['Comment'] as $comment) : ?>
 		<article id="comment_<?php echo $comment['id']; ?>" class="talkBox">
 			<div class="talkHead">
-				<div class="userIcon"><img src="http://flat-icon-design.com/f/f_object_174/s256_f_object_174_0bg.png" alt=""></div>
+				<!-- <div class="userIcon"><img src="http://flat-icon-design.com/f/f_object_174/s256_f_object_174_0bg.png" alt=""></div> -->
 				<div class="userName"><?php echo h($comment['commenter']); ?></div>
 			</div>
 			<p class="talkBoxText"><?php echo nl2br(h($comment['body'])); ?></p>
