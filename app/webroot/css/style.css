@@ -64,6 +64,7 @@ body {
   -webkit-font-smoothing: antialiased;
   word-break: break-all;
   letter-spacing: 0.5px;
+  text-rendering: optimizeLegibility;
   font-family: 'Noto Sans Japanese', "Yu Gothic", YuGothic, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
 }
 
@@ -176,9 +177,10 @@ input,textarea{
   padding: 5px 10px;
   border-radius: 3px;
   background: #fff;
-  font-size: 15px;
+  font-size: 14px;
   margin-right: 5px;
   display: inline-block;
+  color: #333333;
 }
 .talkBoxText:before,
 .talkBoxText:after{
@@ -221,6 +223,8 @@ input,textarea{
   font-size: 14px;
   display: inline-block;
   margin-right: 10px;
+  font-weight: bold;
+  color: #7B7B7B;
 }
 .comment-time{
   font-size: 11px;
