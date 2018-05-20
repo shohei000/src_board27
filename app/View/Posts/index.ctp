@@ -2,7 +2,7 @@
 	<?php foreach($posts as $post) : ?>
 		<li id="post_<?php echo h($post['Post']['id']); ?>">
 			<h3><?php echo $this->Html->link($post['Post']['title'],'/posts/view/'.$post['Post']['id']); ?></h3>
-			<i class="fa fa-angle-right si-link" aria-hidden="true"></i>
+			<!-- <i class="fa fa-angle-right si-link" aria-hidden="true"></i> -->
 		</li>
 	<?php endforeach; ?>
 </ul>
