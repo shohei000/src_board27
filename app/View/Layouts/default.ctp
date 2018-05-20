@@ -6,7 +6,7 @@
 	27歳の掲示板 | 
 		<?php
 			if(isset($post)){
-				$threadTitle = h($post['Post']['title']);
+				$threadTitle = "ooo";
 				echo $threadTitle;
 			} else { 
 				echo $title_for_layout;
