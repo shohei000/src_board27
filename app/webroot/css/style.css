@@ -156,7 +156,7 @@ input,textarea{
 }
 
 .talkWrapper{
-  height: 69vh;
+  /*height: 69vh;*/
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
 }
