@@ -32,7 +32,7 @@ echo $this->Form->input('commenter',array(
 ));
 echo $this->Form->input('body', array(
 	'label' => ' ',
-	'rows'=>3
+	'rows'=>2
 ));
 echo $this->Form->input('Comment.post_id', array('type'=>'hidden', 'value'=>$post['Post']['id']));
 echo $this->Form->end('投稿');
