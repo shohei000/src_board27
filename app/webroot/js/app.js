@@ -3,6 +3,7 @@ $(function(){
 	var app = app || {};
 	var menuFlg = -1;
 	var comFlg = -1;
+	window.onload = function() { setTimeout(scrollTo, 100, 0, 1); }
 
 	app.init = function () {
 		app.pageLink();
@@ -11,7 +12,7 @@ $(function(){
 		app.menuListCom();
 		app.urlCopy();
 	}
-
+	
 	app.pageLink = function () {
 	  $('a[href^="#"]').on('click', function() {
 	    var speed = 400;
