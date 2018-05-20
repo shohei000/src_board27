@@ -157,11 +157,11 @@ input,textarea{
 .talkWrapper{
   height: 80vh;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 .talkArea{
   position: relative;
   margin: 0 10px;
-  -webkit-overflow-scrolling: touch;
 }
 .talkBox{
   margin-bottom: 25px;
