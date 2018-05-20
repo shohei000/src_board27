@@ -459,7 +459,7 @@ input,textarea{
   width: 80%;
   float: left;
   background-color: #fff;
-  padding: 0;
+  padding: 10px 10px;
   font-size: 16px;
 }
 .com-add .submit{

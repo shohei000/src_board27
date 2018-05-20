@@ -32,7 +32,7 @@ echo $this->Form->input('commenter',array(
 ));
 echo $this->Form->input('body', array(
 	'label' => ' ',
-	'rows'=>2
+	'rows'=>1
 ));
 echo $this->Form->input('Comment.post_id', array('type'=>'hidden', 'value'=>$post['Post']['id']));
 echo $this->Form->end('投稿');
@@ -49,6 +49,23 @@ echo $this->Form->end('投稿');
 				}, "json");
 			}
 			return false;
+		});
+
+		$("#CommentBody").height(18);//init
+		$("#CommentBody").css("lineHeight","20px");//init
+		$("#CommentBody").on("input",function(evt){
+	    if(evt.target.scrollHeight > evt.target.offsetHeight){   
+	      $(evt.target).height(evt.target.scrollHeight);
+	    }else{          
+	      var lineHeight = Number($(evt.target).css("lineHeight").split("px")[0]);
+        while (true){
+          $(evt.target).height($(evt.target).height() - lineHeight); 
+          if(evt.target.scrollHeight > evt.target.offsetHeight){
+            $(evt.target).height(evt.target.scrollHeight);
+            break;
+          }
+        }
+	    }
 		});
 
 		$('.userName').on('click',function(){
