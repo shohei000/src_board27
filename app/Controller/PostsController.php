@@ -2,7 +2,6 @@
 class PostsController extends AppController{
 
 	public $helpers = array('Html', 'Form');
-	
 
 	public function index(){
 		$this->set('posts', $this->Post->find('all'));
@@ -14,6 +13,7 @@ class PostsController extends AppController{
 		$this->Post->id = $id;
 		$this->set('post', $this->Post->read());
 		$this->set('com_input',true);
+		$this->response->disableCache();
 	}
 
 	public function add(){
