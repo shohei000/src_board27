@@ -5,8 +5,8 @@
 	<title>
 	27歳の掲示板 | 
 		<?php
+			$threadTitle = h($post['Post']['title']);
 			if(isset($post)){
-				$threadTitle = "ooo";
 				echo $threadTitle;
 			} else { 
 				echo $title_for_layout;
@@ -35,7 +35,7 @@
 	<meta property="og:description" content="<?php echo $threadTitle; ?>" />
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="<?php echo $threadTitle; ?>">
-	<!-- <meta name="twitter:description" content="<?php echo $threadTitle; ?>"> -->
+	<meta name="twitter:description" content="<?php echo $threadTitle; ?>">
 	<meta name="twitter:image" content="http://board27.xyz/ogimage.png">
 
 </head>
