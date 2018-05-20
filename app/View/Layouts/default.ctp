@@ -6,6 +6,7 @@
 	27歳の掲示板 | 
 		<?php
 			$threadTitle = h($post['Post']['title']);
+			$threadId = h($post['Post']['id']);
 			if(isset($post)){
 				echo $threadTitle;
 			} else { 
@@ -91,7 +92,7 @@
 				<i class="fa fa-files-o" aria-hidden="true"></i>
 				<span class="menuTitle">URLをコピー</span>
 			</a>
-			<a href="https://twitter.com/share?url=http://board27.xyz/posts/view/<?php echo $post['Post']['id']; ?>&text=<?php echo $threadTitle; ?>" class="twitter-share-button">
+			<a href="https://twitter.com/share?url=http://board27.xyz/posts/view/<?php echo $threadId; ?>&text=<?php echo $threadTitle; ?>" class="twitter-share-button">
 				<i class="fa fa-files-o" aria-hidden="true"></i>
 				<span class="menuTitle">シェアする(TW)</span>
 			</a>
