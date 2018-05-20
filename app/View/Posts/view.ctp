@@ -42,6 +42,7 @@ echo $this->Form->end('投稿');
 
 <script>
 	$(function(){
+		$('body,html').animate({scrollTop:$(document).height()}, 500, 'swing');
 		$('.delete').on('click', function(e){
 			if(confirm('sure?')){
 				$.post('/comments/delete/' + $(this).data('comment-id'), {}, function(res){
