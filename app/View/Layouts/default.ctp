@@ -35,7 +35,7 @@
 	<meta property="og:description" content="<?php echo $threadTitle; ?>" />
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="<?php echo $threadTitle; ?>">
-	<meta name="twitter:description" content="<?php echo $threadTitle; ?>">
+	<!-- <meta name="twitter:description" content="<?php echo $threadTitle; ?>"> -->
 	<meta name="twitter:image" content="http://board27.xyz/ogimage.png">
 
 </head>
