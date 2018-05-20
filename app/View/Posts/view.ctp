@@ -51,6 +51,11 @@ echo $this->Form->end('投稿');
 			return false;
 		});
 
+		$('.userName').on('click',function(){
+		  var userName = $(this).text();
+		  $('#CommentBody').val('＞' + userName + ' ');
+		});
+
 		$('.submit').on('click',function(){
 			var nameValue = $('#CommentCommenter').val();
 			var CommentBodyValue = $('#CommentBody').val();
