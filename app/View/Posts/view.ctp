@@ -15,6 +15,7 @@
 			<!-- <div class="delete" data-comment-id="<?php echo $comment['id']; ?>">削除</div> -->
 		</article>
 		<?php endforeach; ?>
+		<div class="talkBox-token"></div>
 	</section>
 </div>
 

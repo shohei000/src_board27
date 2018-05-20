@@ -205,6 +205,9 @@ input,textarea{
   -webkit-transform: rotate(35deg);
   transform: rotate(35deg);
 }*/
+.talkBox-token{
+  height: 70px;
+}
 .userIcon{
   width: 25px;
   display: inline-block;
