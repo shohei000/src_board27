@@ -13,7 +13,7 @@ class CommentsController extends AppController{
 			}
 		}
 	}
-
+	
 	public function delete($id){
 		if($this->request->is('get')){
 			throw new MethodNotAllowedException();
@@ -30,5 +30,7 @@ class CommentsController extends AppController{
 		}
 		$this->redirect(array('controller' => 'index', 'action' => 'index'));
 	}
+
+	
 
 }

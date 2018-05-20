@@ -1,4 +1,5 @@
 <div class="talkWrapper">
+
 	<section class="talkArea">
 		<?php foreach($post['Comment'] as $comment) : ?>
 		<?php 
@@ -18,6 +19,7 @@
 		<div class="talkBox-token"></div>
 	</section>
 </div>
+
 
 
 <!-- <div class="com-open com-switch">コメントする</div> -->
@@ -80,9 +82,9 @@ echo $this->Form->end('投稿');
 			if(nameValue == ""){
 				$('#CommentCommenter').val('匿名' + <?php echo $comment['id']; ?>);
 			}
-			if(CommentBodyValue == ""){
-				return false;
-			}
+			// if(CommentBodyValue == ""){
+			// 	return false;
+			// }
 		});
 
 	});
