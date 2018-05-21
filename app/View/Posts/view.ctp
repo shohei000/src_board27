@@ -15,6 +15,9 @@
 			</div>
 			<p class="talkBoxText"><?php echo nl2br(h($comment['body'])); ?></p>
 			<!-- <div class="delete" data-comment-id="<?php echo $comment['id']; ?>">削除</div> -->
+			<ul class="action-list">
+				<li>いいね<?php echo $comment['action']; ?></li>
+			</ul>
 		</article>
 		<?php endforeach; ?>
 		<div class="talkBox-token"></div>
