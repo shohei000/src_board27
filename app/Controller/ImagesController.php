@@ -4,7 +4,7 @@ class ImagesController extends AppController {
     public $helpers = array('Html', 'Form');
 
     var $uses = array('Image');
-    function index(){
+    public function index(){
         $images = $this->Image->find('all');
         $this->set(compact('images'));
     }
@@ -12,7 +12,7 @@ class ImagesController extends AppController {
     /**
      * 画像を登録する
      */
-    function add(){
+    public function add(){
         $limit = 1024 * 1024;
         debug($this->data);
 
@@ -35,7 +35,7 @@ class ImagesController extends AppController {
         );
         $this->Image->save($image);
         $this->Session->setFlash('画像をアップロードしました。');
-        $this->redirect('index');
+        // $this->redirect('index');
     }
 
     function contents($filename) {

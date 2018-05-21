@@ -1,5 +1,6 @@
 <div class="talkWrapper">
 
+
 	<section class="talkArea">
 		<?php foreach($post['Comment'] as $comment) : ?>
 		<?php 
@@ -76,15 +77,15 @@ echo $this->Form->end('投稿');
 		  $('#CommentBody').val('＞' + userName + ' ');
 		});
 
-		$('.submit').on('click',function(){
+		$('.com-add .submit').on('click',function(){
 			var nameValue = $('#CommentCommenter').val();
 			var CommentBodyValue = $('#CommentBody').val();
 			if(nameValue == ""){
 				$('#CommentCommenter').val('匿名' + <?php echo $comment['id']; ?>);
 			}
-			// if(CommentBodyValue == ""){
-			// 	return false;
-			// }
+			if(CommentBodyValue == ""){
+				return false;
+			}
 		});
 
 	});

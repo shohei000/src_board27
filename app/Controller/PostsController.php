@@ -1,4 +1,5 @@
 <?php
+
 class PostsController extends AppController{
 
 	public $helpers = array('Html', 'Form');
@@ -13,7 +14,6 @@ class PostsController extends AppController{
 		$this->Post->id = $id;
 		$this->set('post', $this->Post->read());
 		$this->set('com_input',true);
-		$this->response->disableCache();
 	}
 
 	public function add(){
