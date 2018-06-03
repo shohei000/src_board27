@@ -14,9 +14,10 @@
 				<div class="comment-time"><?php echo $commentData; ?></div>
 			</div>
 			<p class="talkBoxText"><?php echo nl2br(h($comment['body'])); ?></p>
+			<?php echo $this->Session->read('username'); ?>
 			<!-- <div class="delete" data-comment-id="<?php echo $comment['id']; ?>">削除</div> -->
 			<ul class="action-list">
-				<li>いいね<?php echo $comment['action']; ?></li>
+				<li class="iine" data-comment-id="<?php echo $comment['id']; ?>" data-action-num="<?php echo $comment['action']; ?>"><i class="fa fa-heart-o" aria-hidden="true"></i><span><?php echo $comment['action']; ?></span></li>
 			</ul>
 		</article>
 		<?php endforeach; ?>
@@ -33,7 +34,7 @@
 echo $this->Form->create('Comment', array('action'=>'add'));
 echo $this->Form->input('commenter',array(
 	'label' => 'お名前',
-	'placeholder' => '山田太郎',
+	'placeholder' => '入力欄',
 	'value' => $this->Session->read('username')
 ));
 echo $this->Form->input('body', array(
@@ -48,7 +49,9 @@ echo $this->Form->end('投稿');
 
 <script>
 	$(function(){
+
 		$('body,html').animate({scrollTop:$(document).height()}, 500, 'swing');
+
 		$('.delete').on('click', function(e){
 			if(confirm('sure?')){
 				$.post('/comments/delete/' + $(this).data('comment-id'), {}, function(res){
@@ -75,6 +78,23 @@ echo $this->Form->end('投稿');
 	    }
 		});
 
+	
+		//いいね機能
+		$('.action-list li').on('click',function(){
+			var self = $(this);
+			var commentId = $(this).data('comment-id');
+			var actionNum = $(this).data('action-num');
+			
+			$.post(
+	     	'/comments/actionIncrement/' + commentId,
+	     	{actionNum:actionNum},
+	     	function(data){
+	     		self.find('span').text(data);
+	     	}
+			);
+
+		});
+
 		$('.userName').on('click',function(){
 		  var userName = $(this).text();
 		  $('#CommentBody').val('＞' + userName + ' ');
@@ -93,3 +113,5 @@ echo $this->Form->end('投稿');
 
 	});
 </script>
+
+
